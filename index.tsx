@@ -3,7 +3,7 @@
 import { Script, Widget } from "scripting"
 
 async function main() {
-  await Widget.preview({ family: "systemMedium" })
+  await Widget.preview({ family: "systemExtraLarge" })
   Script.exit()
 }
 
