@@ -1,4 +1,5 @@
 // 出口IP信息 — Scripting 版桌面小组件(粘贴到脚本项目的 widget.tsx)
+// v1.6.2:修标签截断 —— 「☁️ Cloudflare:」缩为「☁️ CF:」、「🤖 ChatGPT:」缩为「🤖 GPT:」(原标签在双栏里被挤成省略号)。
 // v1.6.1:修复 v1.6 玻璃版内容空白 —— 根视图的 glassEffect 让整个内容树渲染失败(真机只剩空玻璃框)。
 //        改法:背景干脆不画(不设 background、不加 glassEffect),内容直接落在 iOS 26 系统小组件
 //        自带的透明玻璃外壳上(用户主屏已是 Clear 风格),这才是系统推荐的小组件玻璃做法。
@@ -437,7 +438,7 @@ function WidgetView(props: {
             {d.tz ? <Row label="🕐 时区:" value={d.tz} color="#868E96" size={rowSize} /> : null}
             <SectionTitle text="⚡ 延迟" />
             <Row
-              label="☁️ Cloudflare:"
+              label="☁️ CF:"
               value={ex.cfMs !== null ? `${ex.cfMs} ms` : "超时"}
               color="#495057"
               size={rowSize}
@@ -454,7 +455,7 @@ function WidgetView(props: {
             <Row label="🎞 Netflix:" value={ex.netflix.text} color={ex.netflix.color} size={rowSize} />
             <Row label="📺 YouTube:" value={ex.youtube.text} color={ex.youtube.color} size={rowSize} />
             <Row label="🎵 TikTok:" value={ex.tiktok.text} color={ex.tiktok.color} size={rowSize} />
-            <Row label="🤖 ChatGPT:" value={ex.chatgpt.text} color={ex.chatgpt.color} size={rowSize} />
+            <Row label="🤖 GPT:" value={ex.chatgpt.text} color={ex.chatgpt.color} size={rowSize} />
             <SectionTitle
               text={st ? `📡 服务状态 ${st.upCount}/${st.total} 正常` : "📡 服务状态"}
             />
